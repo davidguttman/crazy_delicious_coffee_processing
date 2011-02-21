@@ -1,18 +1,28 @@
-CoffeeDraw = (p5) ->
-  
+coffee_draw = (p5) ->
+
   p5.setup = () ->
     p5.size $(window).width(), $(window).height()
     p5.background 0
     
   p5.draw = () ->
-    p5.background(p5.frameCount % 255)
+    
+    x_off = p5.frameCount * 0.0005
+    y_off = x_off + 20
+    
+    x = p5.noise(x_off) * p5.width
+    y = p5.noise(y_off) * p5.height
+    
+    p5.stroke 255, 0, 0, 15
+    p5.point(x, y)
+
 
 class Bean
   constructor: (@p5, @opts) ->  
 
+
 $(document).ready ->
   canvas = document.getElementById "processing"
-  processing = new Processing canvas, CoffeeDraw
+  processing = new Processing canvas, coffee_draw
   
 # 
 # function sketchProc(processing) {
