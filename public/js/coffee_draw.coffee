@@ -1,7 +1,7 @@
 coffee_draw = (p5) ->
   p5.setup = () ->
-    p5.size $(window).width(), $(window).height()
-    p5.background 0
+    p5.size($(window).width(), $(window).height())
+    p5.background(0)
     @beans = []
     
   p5.draw = () ->    
@@ -45,7 +45,7 @@ class Bean
     @y += @p5.noise(@y_off) * @vel - @vel/2
     
     @set_color()
-    @p5.point @x, @y
+    @p5.point(@x, @y)
     
     
   set_color: () ->
@@ -56,8 +56,8 @@ class Bean
     b = 100
     a = 4
     
-    @p5.stroke h, s, b, a
+    @p5.stroke(h, s, b, a)
 
 $(document).ready ->
   canvas = document.getElementById "processing"
-  processing = new Processing canvas, coffee_draw
+  processing = new Processing(canvas, coffee_draw)
