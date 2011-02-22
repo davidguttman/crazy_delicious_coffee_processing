@@ -14,10 +14,35 @@ coffee_draw = (p5) ->
     
     p5.stroke 255, 0, 0, 15
     p5.point(x, y)
+    
 
 
 class Bean
-  constructor: (@p5, @opts) ->  
+  constructor: (p5, opts) ->
+    @x = opts.x
+    @y = opts.y
+    
+    @x_off = opts.x_off
+    @y_off = opts.y_off
+    
+    @vel = opts.vel || 5
+    @accel = opts.accel || -0.001
+  
+  draw: () ->
+    return unless @vel > 0
+    
+    @x_off += 0.0003
+    @y_off += 0.0003
+    
+    @vel += @accel
+    
+    @x += p5.noise(@x_off) * @vel
+    @y += p5.noise(@y_off) * @vel
+    
+    p5.stroke 0, 255, 0, 15
+    
+    p5.point @x, @y
+
 
 
 $(document).ready ->
