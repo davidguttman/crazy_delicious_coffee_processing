@@ -4,7 +4,9 @@ coffee_draw = (p5) ->
     p5.background 0
     @beans = []
     
-  p5.draw = () ->    
+  p5.draw = () ->
+    p5.fade()
+    
     x_off = p5.frameCount * 0.0003
     y_off = x_off + 20
     
@@ -21,6 +23,12 @@ coffee_draw = (p5) ->
       @beans.push(bean)
     
     bean.draw() for bean in @beans
+  
+  p5.fade = () ->
+    if p5.frameCount % 220 == 0
+      p5.stroke 0, 0
+      p5.fill 0, 10
+      p5.rect 0, 0, p5.width, p5.height
 
 class Bean
   constructor: (@p5, opts) ->
