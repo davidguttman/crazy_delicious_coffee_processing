@@ -26,9 +26,9 @@ coffee_draw = (p5) ->
   
   p5.fade = () ->
     if p5.frameCount % 220 == 0
-      p5.stroke 0, 0
-      p5.fill 0, 10
-      p5.rect 0, 0, p5.width, p5.height
+      p5.stroke(0, 0)
+      p5.fill(0, 10)
+      p5.rect(0, 0, p5.width, p5.height)
 
 class Bean
   constructor: (@p5, opts) ->
@@ -53,7 +53,7 @@ class Bean
     @y += @p5.noise(@y_off) * @vel - @vel/2
     
     @set_color()
-    @p5.point @x, @y
+    @p5.point(@x, @y)
     
     
   set_color: () ->
@@ -64,8 +64,8 @@ class Bean
     b = 100
     a = 4
     
-    @p5.stroke h, s, b, a
+    @p5.stroke(h, s, b, a)
 
 $(document).ready ->
   canvas = document.getElementById "processing"
-  processing = new Processing canvas, coffee_draw
+  processing = new Processing(canvas, coffee_draw)
