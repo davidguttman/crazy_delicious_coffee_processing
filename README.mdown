@@ -1,29 +1,5 @@
 # What is this?
 
-This is a base/starting point for a simple web app. Includes jQuery 1.5, Underscore 1.1.4, and plugins.js from HTML5 Boilerplate. It also uses the stylesheet from HTML5 Boilerplate as a base. As well as setting up some default directories.
+This is the code that goes along with the tutorial:
 
-The "Installation" below is only necessary if you want the convenience of using a stand-alone web server for this app (thin), using passenger, or using the server as a proxy for cross-site json requests.
-
-# Installation
-
-Dependencies: Ruby, RubyGems, Sinatra, Thin
-
-On OSX, both Ruby and RubyGems should be installed by default.
-
-To install Sinatra and Thin:
-
-    $ sudo gem install sinatra
-    $ sudo gem install thin
-    
-To start the app locally (from this directory):
-  
-    $ thin start
-    
-The app should be running on localhost, port 3000. Now just point your browser to [http://localhost:3000/](http://localhost:3000/)
-
----
-
-If you're on OSX and you'd prefer to use Passenger:
-
-I recommend [PassengerPane](https://github.com/Fingertips/passengerpane), follow the directions there to get all set-up.
-
+[CoffeeScript + Processing.js == Crazy Delicious](http://dry.ly/2011/02/21/coffeescript--processingjs--crazy-delicious/)
